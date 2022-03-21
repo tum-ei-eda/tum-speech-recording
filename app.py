@@ -4,9 +4,12 @@ import flask
 import os
 import uuid
 import waitress
+import logging
 
 app = flask.Flask(__name__)
 
+HOST = "127.0.0.1"
+PORT = 8080
 
 @app.route("/")
 def welcome():
@@ -58,4 +61,10 @@ app.jinja_env.globals['csrf_token'] = generate_csrf_token
 app.secret_key = "DEPLOYING_LOCALLY_ONLY_PLACEHOLDER"
 
 if __name__ == "__main__":
-    waitress.serve(app, host="0.0.0.0", port=8080)
+    logger = logging.getLogger('waitress')
+    logger.setLevel(logging.INFO)
+    logger_handler = logging.StreamHandler()
+    logger.addHandler(logger_handler)
+    logger_handler.setFormatter(logging.Formatter('%(message)s'))
+    logger.propagate = False
+    waitress.serve(app, host=HOST, port=PORT, _quiet=False)
