@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>TUM Speech Recording</title>
+  <link href="static/styles/app.css" rel="stylesheet" type="text/css">
+</head>
+<script type="text/javascript">
+  var csrf_token = "{{ csrf_token() }}";
+</script>
+
+<body>
+
+  <div class="wrapper">
+
+    <header>
+      <h1><img class="moveimage" src="/static/assets/tum.svg" alt="TUM" width="20%"> Speech Recording</h1>
+    </header>
+
+    <section class="top-display">
+      <div class="directions">
+        <ol>
+          <li>
+            Input the <strong>words</strong> you would like to record as a comma-separated list:
+            <br />
+            <input type="text" id="input_words" value="TUM">
+          </li>
+          <br />
+          <li>
+            Input the <strong>number of samples</strong> of each word you would like to record:
+            <br />
+            <input type="text" id="input_counts" value="10">
+          </li>
+          <br />
+          <li>
+            Press <strong>Record</strong> to start recording. Speak the word shown in the box below when the button turns red.
+          </li>
+          <br />
+          <li>
+            Press <strong>Stop</strong> to stop recording at any time. You can playback and delete clips as you like.
+          </li>
+          <li>
+            Press <strong>Download</strong> to download the recordings into a local directory: <mark class="fileslink"></mark>.
+          </li>
+          <br />
+          </ul>
+      </div>
+      <div class="progress-display">
+      </div>
+      <div class="info-display">
+      </div>
+    </section>
+
+    <section class="main-controls">
+      <canvas class="visualizer"></canvas>
+      <div id="buttons">
+        <button class="record">Record</button>
+        <button class="stop">Stop</button>
+        <button class="upload">Download</button>
+      </div>
+    </section>
+
+    <section class="sound-clips">
+
+      <!-- This is left here as a helper for testing the style of the clips
+        If you want to edit their appearance without having to record clips,
+        uncomment this and reload the page. Remember to comment it again when done!
+        <article class="clip">
+          <audio controls></audio>
+          <p>Sample clip name</p>
+          <button class="delete">Delete</button>
+        </article>
+        -->
+
+    </section>
+
+  </div>
+
+  <script src="static/scripts/app.js"></script>
+
+</body>
+
+</html>
