@@ -26,9 +26,9 @@ As with any machine learning, problem data is key. In our case, we are intereste
 
 When looking into acquiring training data for machine learning, there are usually two main options: Using already existing data sets or collecting your own data. Both have their obvious advantages and drawback. Generally speaking, if there already exist training data tests, you would be foolish not to use them. However, you might find that for your specific problem, there is no data available yet. Thus, you have no other option than to collect your own data.
 
-In our application case of KWS, we are lucky to have already a great training data set available free of charge. Thanks to Pete Warden from Google, we can abstain from having to collect thousands of audio snippets. He started a big campaign a couple of years ago in which he and many other people collected thousands of words into 1-second clips each.
+In our application case of KWS, we are lucky to have already a great training data set available free of charge. Thanks to [Pete Warden](https://arxiv.org/pdf/1804.03209.pdf) from Google, we can abstain from having to collect thousands of audio snippets. He started a big campaign a couple of years ago in which he and many other people collected thousands of words into 1-second clips each.
 
 However, since we want our model also to be able to recognize the keyword "TUM", which we probably won't be able to find in any public audio dataset, we will have to collect our own samples. For that, we will be utilizing a modified version of the tool that Pete used when he collected his data set. It is a simple web application that allows us to collect many data samples from colleagues and friends.
 
 ## Credits
-Based on prior work from [Harvard CS249r](https://github.com/tinyMLx/open-speech-recording) and [Pete Warden](https://github.com/petewarden/open-speech-recording).
+Based on prior work from [Harvard CS249r](https://github.com/tinyMLx/open-speech-recording) and [Pete Warden](https://github.com/petewarden/open-speech-recording).  
