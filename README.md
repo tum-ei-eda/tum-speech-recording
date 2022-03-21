@@ -4,7 +4,7 @@ TUM Speech Recording is a small web application that collects short snippets of 
 
 ## Use
 
-**Currently only tested on Ubuntu 18.04!**
+*Disclaimer: This is a work in progress and currently only tested on Ubuntu 18.04!*
 
 ### Collect data
 - Open a terminal
@@ -21,7 +21,7 @@ TUM Speech Recording is a small web application that collects short snippets of 
 - Run the post processing script `./process.sh`
 - Upload the zipfile created in the `recordings/` directory
 
-### Background
+## Background
 As with any machine learning, problem data is key. In our case, we are interested in short audio samples that each contain a single keyword, like "yes", "no", "up", or "down". These short labelled audio samples will then be used to train our machine learning model. Additionally, we might want to feed our models some noise only samples, such that it knows what background noise, i.e. silence, looks like. The process of collecting, preparing, and labelling these audio samples can be quite cumbersome. It is not unusual for this process to be the most time-consuming part of the development process, along with the actual training of the model. But because our model will only be as good as the data it sees, we need to ensure that our training data set is as high quality and as extensive as possible.
 
 When looking into acquiring training data for machine learning, there are usually two main options: Using already existing data sets or collecting your own data. Both have their obvious advantages and drawback. Generally speaking, if there already exist training data tests, you would be foolish not to use them. However, you might find that for your specific problem, there is no data available yet. Thus, you have no other option than to collect your own data.
