@@ -19,7 +19,7 @@ TUM Speech Recording is a small web application that collects short snippets of 
 ### Post Process
 - Install ffmpeg `sudo apt-get install ffmpeg`
 - Run the post processing script `./process.sh`
-- Upload the zipfile created in the `recordings/` directory
+- Upload the zipfile created in the `recordings/` directory (TODO(fabianpedd): To where?! For internal use we could upload to LRZ? Students could upload to moodle?)
 
 ## Background
 As with any machine learning, problem data is key. In our case, we are interested in short audio samples that each contain a single keyword, like "yes", "no", "up", or "down". These short labelled audio samples will then be used to train our machine learning model. Additionally, we might want to feed our models some noise only samples, such that it knows what background noise, i.e. silence, looks like. The process of collecting, preparing, and labelling these audio samples can be quite cumbersome. It is not unusual for this process to be the most time-consuming part of the development process, along with the actual training of the model. But because our model will only be as good as the data it sees, we need to ensure that our training data set is as high quality and as extensive as possible.
